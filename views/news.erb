@@ -23,13 +23,41 @@
   <body>
 
     <div class="container mt-5">
-      <h1>Weather</h1>
-      <p> The current weather is <%= @current_temp %> and <%= @current_summary %></p>
-      <p> The upcoming forecast is: </p>
-      <h2>News<h2>
-      <p> Today's top headline: </p>
-      <p> <%= @news_title %> </p>
-      <p> <a href <%= @news_url %> </p> 
+        <div class = "row">
+            <div class = "col-md-12">
+                <h1 class = "section-title">Weather</h1>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12">    
+                <p> The current weather is <%= @current_temp %> and <%= @current_summary %></p>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12">    
+                <p> The upcoming forecast is: </p>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12">
+                <h2 class = "section-title">News</h2>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12">    
+                <h3> Today's top headline: </h3>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12">    
+                <p> <%= @news_title %> </p>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12">    
+                <a href = "<%= @news_url %>">Read the Article
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->

@@ -34,6 +34,6 @@ get "/news" do
     pp news
     @news_title = news["articles"][0]["title"]
     @news_url = news["articles"][0]["url"]
-
     view "news"
+    puts @news_title
 end
