@@ -23,12 +23,13 @@
   <body>
 
     <div class="container mt-5">
-      <h1>The News and Weather</h1>
-      <form action="/news">
-      <label>Enter Your Location:</label>
-      <input type = "text" name="location">
-      <button type="submit" class="btn btn-primary">Go There</button>
-      </form>
+      <h1>Weather</h1>
+      <p> The current weather is <%= @current_temp %> and <%= @current_summary %></p>
+      <p> The upcoming forecast is: </p>
+      <h2>News<h2>
+      <p> Today's top headline: </p>
+      <p> <%= @news_title %> </p>
+      <p> <a href <%= @news_url %> </p> 
     </div>
 
     <!-- Optional JavaScript -->
