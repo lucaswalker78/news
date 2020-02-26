@@ -1,3 +1,17 @@
-.h3 {
-font-size 40px;
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, .section-title{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+h1, .display-4 {
+  color: rgba(17, 0, 255, 0.678);
+  font-weight: 100;
+  font-family: 'Bangers', cursive;
 }

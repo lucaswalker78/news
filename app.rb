@@ -14,23 +14,17 @@ url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=30c0f09f76394df2ab
 news = HTTParty.get(url).parsed_response.to_hash
 
 get "/" do
-  # show a view that asks for the location
   view "ask"
 end
 
 get "/news" do
-  # do everything else
     results = Geocoder.search(params["location"])
     lat_long = results.first.coordinates
     "#{lat_long[0]} #{lat_long[1]}"
     forecast = ForecastIO.forecast("#{lat_long[0]}","#{lat_long[1]}").to_hash
     @current_summary =  forecast ["currently"]["summary"]
     @current_temp = forecast ["currently"]["temperature"]
-    @forecast_array = forecast["daily"]["data"]
-    for the_weather_today in @forecast_array
-    puts "#{the_weather_today["temperatureLow"]}" and "#{the_weather_today["summary"]}"
-    end
-    # news is now a Hash you can pretty print (pp) and parse for your output
+    @forecast_temp = forecast["daily"]["data"]
     pp news
     @news_title = news["articles"][0]["title"]
     @news_url = news["articles"][0]["url"]

@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <!-- Swap out "Roboto" for the font(s) you want to use -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Raleway|Ubuntu&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
@@ -22,6 +22,14 @@
   </head>
   <body>
 
+    <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Today's News and Weather</h1>
+      <hr class="my-4">
+      <p class="lead">This app provides the latest and greatest news and weather</p>
+    </div>
+  </div>
+
     <div class="container mt-5">
         <div class = "row">
             <div class = "col-md-12">
@@ -30,7 +38,7 @@
         </div>
         <div class = "row">
             <div class = "col-md-12">    
-                <p> The current weather is <%= @current_temp %> and <%= @current_summary %></p>
+                <p> The current weather is <%= @current_temp %> and <%= @current_summary %>.</p>
             </div>
         </div>
         <div class = "row">
@@ -40,12 +48,19 @@
         </div>
         <div class = "row">
             <div class = "col-md-12">
+                <% for day in @forecast_temp %>
+                <div> A high of <%= day["temperatureHigh"] %> and <%= day["summary"] %> </div>
+                <% end %>
+            </div>
+        </div>    
+        <div class = "row">
+            <div class = "col-md-12">
                 <h1 class = "section-title">News</h1>
             </div>
         </div>
         <div class = "row">
             <div class = "col-md-12">    
-                <h3> Today's top headline: </h3>
+                <h2> Today's top headline: </h2>
             </div>
         </div>
         <div class = "row">
@@ -59,6 +74,15 @@
             </div>
         </div>
     </div>
+
+    <div class="container footer">
+        <div class="row my-5">
+          <div class="col-sm-4">
+            <a href = "/" class="btn btn-primary">Search Weather for a Different Location</a>
+          </div>
+        </div>
+    </div>
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
